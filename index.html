@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafePath AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="background-glow glow1"></div>
+<div class="background-glow glow2"></div>
+
+<header>
+
+    <div class="logo">
+        🩷 SafePath AI
+    </div>
+
+    <nav>
+
+        <a href="#">Home</a>
+        <a href="#">Safety</a>
+        <a href="#">Report</a>
+        <a href="#">SOS</a>
+
+    </nav>
+
+</header>
+
+<section class="hero">
+
+    <div class="hero-left">
+
+        <span class="tag">
+            Women's Smart Safety
+        </span>
+
+        <h1>
+            Walk Smarter.
+            <br>
+            Walk Safer.
+        </h1>
+
+        <p>
+
+            AI-powered safe route navigation that helps women avoid
+            unsafe streets, predicts risky areas and connects you to
+            emergency help instantly.
+
+        </p>
+
+    </div>
+
+    <div class="hero-right">
+
+        <div class="phone">
+
+            <div class="phone-map">
+
+                📍 Live Safe Route
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="search-card">
+
+    <h2>
+        Find Your Safest Route
+    </h2>
+
+    <input
+        id="start"
+        type="text"
+        placeholder="📍 Starting Location">
+
+    <input
+        id="destination"
+        type="text"
+        placeholder="🏁 Destination">
+
+    <input
+        type="time">
+
+    <button onclick="showRoutes()">
+        Find Safest Route →
+    </button>
+
+</section>
+
+<section
+id="routes"
+class="hidden">
+
+    <h2 class="section-title">
+        Recommended Routes
+    </h2>
+
+    <div class="map">
+
+        🗺 Interactive Map
+
+    </div>
+
+    <div class="route-grid">
+
+        <div class="route-card best">
+
+            <div class="badge">
+                ⭐ Recommended
+            </div>
+
+            <h3>Route A</h3>
+
+            <h1>78%</h1>
+
+            <p>16 mins • 2.4 km</p>
+
+            <p>
+                Well lit roads, nearby police station,
+                24×7 pharmacy and low crime reports.
+            </p>
+
+            <button onclick="startJourney()">
+                Start Journey
+            </button>
+
+        </div>
+
+        <div class="route-card">
+
+            <div class="badge danger">
+
+                Caution
+
+            </div>
+
+            <h3>Route B</h3>
+
+            <h1>61%</h1>
+
+            <p>13 mins • 2.0 km</p>
+
+            <p>
+
+                Faster but contains darker roads and
+                previous incident reports.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section
+id="journey"
+class="hidden">
+
+    <div class="map">
+
+        📍 Live Journey Tracking
+
+    </div>
+
+    <div class="journey-card">
+
+        <h2>
+            Journey Active
+        </h2>
+
+        <div class="score">
+
+            Safety Score
+
+            <span>78%</span>
+
+        </div>
+
+        <div class="stats">
+
+            <div>
+
+                ETA
+
+                <strong>12 mins</strong>
+
+            </div>
+
+            <div>
+
+                Remaining
+
+                <strong>1.6 km</strong>
+
+            </div>
+
+        </div>
+
+        <button onclick="openReport()">
+
+            Report Incident
+
+        </button>
+
+        <button
+        class="sos-btn"
+        onclick="openSOS()">
+
+            🆘 Emergency SOS
+
+        </button>
+
+    </div>
+
+</section>
+
+<div
+class="popup hidden"
+id="reportPopup">
+
+<div class="popup-box">
+
+<h2>Report Incident</h2>
+
+<select>
+
+<option>Harassment</option>
+<option>Poor Lighting</option>
+<option>Suspicious Activity</option>
+<option>Unsafe Area</option>
+
+</select>
+
+<textarea
+placeholder="Describe what happened..."></textarea>
+
+<button onclick="submitReport()">
+
+Submit Report
+
+</button>
+
+</div>
+
+</div>
+
+<div
+class="popup hidden"
+id="sosPopup">
+
+<div class="popup-box">
+
+<h2>
+
+🆘 SOS Activated
+
+</h2>
+
+<p>✔ Live location sent</p>
+
+<p>✔ Emergency contacts alerted</p>
+
+<p>✔ Current route shared</p>
+
+<p>✔ Battery status included</p>
+
+<button onclick="closeSOS()">
+
+Close
+
+</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
